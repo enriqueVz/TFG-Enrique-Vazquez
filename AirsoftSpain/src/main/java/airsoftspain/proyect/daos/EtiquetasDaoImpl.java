@@ -3,10 +3,12 @@ package airsoftspain.proyect.daos;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import airsoftspain.proyect.entities.Etiquetas;
 import airsoftspain.proyect.repositories.EtiquetasRepository;
 
+@Service
 public class EtiquetasDaoImpl implements EtiquetasDao {
 
 	@Autowired

@@ -1,5 +1,6 @@
 package airsoftspain.proyect.entities;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,11 @@ public class Pedidos {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	public int idPed;
+	public int idUser;
+	public int idProds;
+	
+	
 
 
 }

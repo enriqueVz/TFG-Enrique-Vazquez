@@ -3,10 +3,12 @@ package airsoftspain.proyect.daos;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import airsoftspain.proyect.entities.Productos;
 import airsoftspain.proyect.repositories.ProductosRepository;
 
+@Service
 public class ProductosDaoImpl implements ProductosDao {
 
 	@Autowired

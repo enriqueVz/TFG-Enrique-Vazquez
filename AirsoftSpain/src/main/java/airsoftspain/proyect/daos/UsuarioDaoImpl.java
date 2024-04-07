@@ -3,10 +3,12 @@ package airsoftspain.proyect.daos;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import airsoftspain.proyect.entities.Usuario;
 import airsoftspain.proyect.repositories.UsuarioRepository;
 
+@Service
 public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Autowired
@@ -19,7 +21,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	}
 
 	@Override
-	public Usuario buscarPorId(int dni) {
+	public Usuario buscarPorDNI(String dni) {
 		return Urepo.encontrarUsuarioXId(dni);
 	}
 
@@ -29,7 +31,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	}
 
 	@Override
-	public List<Usuario> buscarPorAdress(int direccion) {
+	public Usuario buscarPorAdress(String direccion) {
 		return Urepo.encontrarUsuarioXAdress(direccion);
 	}
 
@@ -40,12 +42,32 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Override
 	public Usuario buscarPorTlf(int telefono) {
-		return ;
+		return Urepo.encontrarUsuarioTlf(telefono);
 	}
 
 	@Override
 	public List<Usuario> buscarPorRol(int idRol) {
-		return ;
+		return Urepo.encontrarUsuarioXIdRol(idRol);
 	}
 
+	@Override
+	public Usuario buscarXId(int id) {
+		return Urepo.encontrarUsuarioXId(id);
+	}
+
+
+	@Override
+	public  boolean registro (Usuario usuario) {
+		Urepo.save(usuario);
+		return true;
+	
+		
+	}
+
+	@Override
+	public Usuario guardarUser(Usuario usuario) {
+ return Urepo.save(usuario);
+	}
 }
+	
+

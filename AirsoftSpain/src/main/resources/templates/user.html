@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuarios</title>
+</head>
+<body>
+	
+		<div>
+			<fieldset>
+				<legend>Usuario: <label th:text=""></label></legend>
+					
+						<table>
+						<th>DNI</th>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Código postal</th>
+						<th>Dirección</th>
+						<th>ID ROL</th>
+						<th>Email</th>
+						<th>Teléfono</th>
+					
+						<tr>
+						<td th:text="${usuario.dni}"></td>
+						<td th:text="${usuario.nombre}"></td>
+						<td th:text="${usuario.apellidos}"></td>
+						<td th:text="${usuario.CPostal}"></td>
+						<td th:text="${usuario.direccion}"></td>
+						<td th:text="${usuario.idRol}"></td>
+						<td th:text="${usuario.email}"></td>
+						<td th:text="${usuario.telefono}"></td>
+						</tr>
+						
+						
+						</table>
+			</fieldset>
+		</div>
+</body>
+</html>
