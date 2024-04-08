@@ -47,5 +47,36 @@ UsuarioDao udao;
 		return "redirect:/usuarios";
 		
 	}
+	
+	@GetMapping("/usuarios/modificar/{id}")
+	public String mostrarFormEdit(@PathVariable int id, Model model) {
+	model.addAttribute("usuario", udao.buscarXId(id));
+	return "usermodif";
 }
 
+	@PostMapping("/usuarios/{id}")
+	public String modificarUser(@PathVariable int id, @ModelAttribute("usuario") Usuario usuario, Model model) {
+		Usuario userExistente = udao.buscarXId(id);
+		userExistente.setId(id);
+		userExistente.setNombre(usuario.getNombre());
+		userExistente.setApellidos(usuario.getApellidos());
+		userExistente.setContraseña(usuario.getContraseña());
+		userExistente.setCPostal(usuario.getCPostal());
+		userExistente.setDireccion(usuario.getDireccion());
+		userExistente.setDni(usuario.getDni());
+		userExistente.setEmail(usuario.getEmail());
+		userExistente.setIdRol(usuario.getIdRol());
+		userExistente.setTelefono(usuario.getTelefono());
+		
+		udao.modificarUser(userExistente);
+		return "redirect:/usuarios";
+		
+	}
+	
+	//DELETE
+	@GetMapping("/usuarios/eliminar/{id}")
+	public String eliminarUser(@PathVariable int id) {
+		udao.eliminarUser(id);
+		return "redirect:/usuarios";
+	}
+}

@@ -6,7 +6,7 @@ import airsoftspain.proyect.entities.Usuario;
 
 public interface UsuarioDao {
 
-	 public List<Usuario> verLosUsuarios();
+	
 	Usuario buscarPorDNI(String dni);
 	List<Usuario> buscarPorCP(int CPostal);
 	Usuario buscarPorAdress(String direccion);
@@ -17,6 +17,13 @@ public interface UsuarioDao {
 	boolean registro(Usuario user);
 	
 	
+	//CRUD
+	public List<Usuario> verLosUsuarios();
+	 
 	public Usuario guardarUser(Usuario usuario);
+	
+	public Usuario modificarUser(Usuario usuario);
+	
+	public void eliminarUser (int id);
 	
 }

@@ -32,13 +32,28 @@
 						<td th:text="${usuario.idRol}"></td>
 						<td th:text="${usuario.email}"></td>
 						<td th:text="${usuario.telefono}"></td>
+						
+						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
+						<td>
+							<a th:href="@{/usuarios/modificar/{id}(id=${usuario.id})}" class="btn btn-info">
+							<button>Editar usuario:</button>
+							</a>
+						</td>
+						
+						<td>
+							<a th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}" class="btn btn-info">
+							<button>Eliminar usuario:</button>
+							</a>
+						</td>
 						</tr>
-						
-						
 						</table>
 			</fieldset>
 		</div>
 		<br>
+		
+		
+		<!-- BOTONES DE ALTA Y REDIRECCIÓN -->
+						
 		<a th:href="@{/usuarios/alta}">
 		<button>Crea un usuario:</button>
 		</a>

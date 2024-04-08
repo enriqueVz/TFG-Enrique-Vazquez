@@ -13,7 +13,6 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	@Autowired
 	UsuarioRepository Urepo;
-	
 
 	@Override
 	public List<Usuario> verLosUsuarios() {
@@ -55,19 +54,26 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		return Urepo.encontrarUsuarioXId(id);
 	}
 
-
 	@Override
-	public  boolean registro (Usuario usuario) {
+	public boolean registro(Usuario usuario) {
 		Urepo.save(usuario);
 		return true;
-	
-		
+		// QUITAR
+
 	}
 
 	@Override
 	public Usuario guardarUser(Usuario usuario) {
- return Urepo.save(usuario);
+		return Urepo.save(usuario);
+	}
+
+	@Override
+	public Usuario modificarUser(Usuario usuario) {
+		return Urepo.save(usuario);
+	}
+
+	@Override
+	public void eliminarUser(int id) {
+		Urepo.deleteById(id);
 	}
 }
-	
-
