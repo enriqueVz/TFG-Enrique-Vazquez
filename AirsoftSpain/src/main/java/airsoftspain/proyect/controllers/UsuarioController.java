@@ -25,10 +25,10 @@ UsuarioDao udao;
 		return "usuarios";
 		
 	}
-	
-	@GetMapping("/usuarios/user/{dni}")
-	public String verUnUser(@PathVariable("dni") String dni, Model model){
-		model.addAttribute("usuario", udao.buscarPorDNI(dni));
+	//FALLA ALGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	@GetMapping("/usuarios/user/{id}")
+	public String verUnUser(@PathVariable("id") int id, Model model){
+		model.addAttribute("usuario", udao.buscarXId(id));
 		return "user";
 		
 	}//No funciona)

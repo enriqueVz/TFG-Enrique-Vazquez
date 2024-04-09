@@ -42,6 +42,7 @@ CREATE TABLE productos (
     id_producto INTEGER PRIMARY KEY AUTO_INCREMENT,
     nombre_producto VARCHAR(150),
     descripcion VARCHAR(300),
+    etiquetas INTEGER(3),
     precio DECIMAL(10,2),
     stock INTEGER,
     tipo_producto_id INTEGER,
