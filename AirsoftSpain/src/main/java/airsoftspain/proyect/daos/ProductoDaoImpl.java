@@ -40,6 +40,21 @@ public class ProductoDaoImpl implements ProductoDao {
 		return Prepo.buscarProdXStock(stock);
 	}
 	
+	@Override
+	public List<Producto> findProductosByMaterial(String material) {
+		return Prepo.buscarProdXMaterial(material);
+	}
+
+	@Override
+	public List<Producto> findProductosByFabricante(String fabricante) {
+		return Prepo.buscarProdXFabricante(fabricante);
+	}
+
+	@Override
+	public List<Producto> findProductosByMecanismo(String mecanismo) {
+		return Prepo.buscarProdXMecanismo(mecanismo);
+	}
+	
 	//CRUD
 	
 	@Override
@@ -61,5 +76,6 @@ public class ProductoDaoImpl implements ProductoDao {
 	public void eliminarProducto(int id) {
 		Prepo.deleteById(id);
 	}
+
 
 }

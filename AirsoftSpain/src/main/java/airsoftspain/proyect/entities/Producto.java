@@ -37,15 +37,17 @@ public class Producto {
 	public int stock;
 	@Column(name="tipo_producto_id")
 	public int tipoProd;
+	public String material;
+	public String fabricante;
+	public String mecanismo;
 	
 	
 	public Producto() {
 		super();
 	}
 
-
-	public Producto(int id, String nombre, String descripcion, int etiquetas, double precio, int stock,
-			int tipoProd) {
+	public Producto(int id, String nombre, String descripcion, int etiquetas, double precio, int stock, int tipoProd,
+			String material, String fabricante, String mecanismo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -54,86 +56,93 @@ public class Producto {
 		this.precio = precio;
 		this.stock = stock;
 		this.tipoProd = tipoProd;
+		this.material = material;
+		this.fabricante = fabricante;
+		this.mecanismo = mecanismo;
 	}
-
+	
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getNombre() {
 		return nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 
 	public int getEtiquetas() {
 		return etiquetas;
 	}
 
-
 	public void setEtiquetas(int etiquetas) {
 		this.etiquetas = etiquetas;
 	}
-
 
 	public double getPrecio() {
 		return precio;
 	}
 
-
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-
 
 	public int getStock() {
 		return stock;
 	}
 
-
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
 
-
-	public int gettipoProd() {
+	public int getTipoProd() {
 		return tipoProd;
 	}
 
-
-	public void settipoProd(int tipoProd) {
+	public void setTipoProd(int tipoProd) {
 		this.tipoProd = tipoProd;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Producto [id=" + id + ", nombre_p=" + nombre + ", descripcion=" + descripcion + ", etiquetas="
-				+ etiquetas + ", precio=" + precio + ", stock=" + stock + ", tipoProd=" + tipoProd + "]";
+	public String getMaterial() {
+		return material;
 	}
 
+	public void setMaterial(String material) {
+		this.material = material;
+	}
 
+	public String getFabricante() {
+		return fabricante;
+	}
+
+	public void setFabricante(String fabricante) {
+		this.fabricante = fabricante;
+	}
+
+	public String getMecanismo() {
+		return mecanismo;
+	}
+
+	public void setMecanismo(String mecanismo) {
+		this.mecanismo = mecanismo;
+	}
+
+	
 	
 	//CON LA PK SOLO
 	@Override

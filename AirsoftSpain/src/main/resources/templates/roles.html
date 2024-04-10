@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Roles</title>
+</head>
+<body>
+	
+		<div>
+			<fieldset>
+				<legend>Roles</legend>
+					
+						<table>
+						<th>id</th>
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						
+						
+						<tr th:each="rol : ${roles}">
+						<td th:text="${rol.id}"></td>
+						<td th:text="${rol.nombre}"></td>
+						<td th:text="${rol.descripcion}"></td>
+						
+						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
+						<td>
+							<a th:href="@{/roles/modificar/{id}(id=${rol.id})}" class="btn btn-info">
+							<button>Editar rol:</button>
+							</a>
+						</td>
+						
+						<td>
+							<a th:href="@{/roles/eliminar/{id}(id=${rol	.id})}" class="btn btn-info">
+							<button>Eliminar rol:</button>
+							</a>
+						</td>
+						</tr>
+						</table>
+			</fieldset>
+		</div>
+		<br>
+		
+		
+		<!-- BOTONES DE ALTA Y REDIRECCIÓN -->
+						
+		<a th:href="@{/roles/alta}">
+		<button>Crea un rol:</button>
+		</a>
+			
+		<a th:href="@{/}">
+		<button>volver al inicio:</button>
+		</a>
+</body>
+</html>

@@ -13,11 +13,6 @@ public class EtiquetaDaoImpl implements EtiquetaDao {
 
 	@Autowired
 	EtiquetaRepository Erepo;
-	
-	@Override
-	public List<Etiqueta> listarLasEtiquetas() {
-	return Erepo.findAll();
-	}
 
 	@Override
 	public Etiqueta findPorId(int id) {
@@ -30,4 +25,24 @@ public class EtiquetaDaoImpl implements EtiquetaDao {
 		
 	}
 
+	//CRUD
+	@Override
+	public List<Etiqueta> listarLasEtiquetas() {
+	return Erepo.findAll();
+	}
+
+	@Override
+	public Etiqueta guardarEtiqueta(Etiqueta etiqueta) {
+		return Erepo.save(etiqueta);
+	}
+
+	@Override
+	public Etiqueta modificarEtiqueta(Etiqueta etiqueta) {
+		return Erepo.save(etiqueta);
+	}
+
+	@Override
+	public void eliminarEtiqueta(int id) {
+		Erepo.deleteById(id);
+	}
 }

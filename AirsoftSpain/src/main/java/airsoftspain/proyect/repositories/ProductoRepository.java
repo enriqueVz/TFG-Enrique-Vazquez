@@ -28,5 +28,14 @@ public interface ProductoRepository extends JpaRepository <Producto, Integer> {
 													//LA variable de la query tiene que ir igual que en Java
 	@Query("Select p FROM Producto p WHERE p.tipoProd=?1")
 	public List<Producto> buscarProdXTipos(int tipoProd);
+	
+	@Query("Select p FROM Producto p WHERE p.material=?1")
+	public List<Producto> buscarProdXMaterial(String material);
+	
+	@Query("Select p FROM Producto p WHERE p.fabricante=?1")
+	public List<Producto> buscarProdXFabricante(String fabricante);
+	
+	@Query("Select p FROM Producto p WHERE p.mecanismo=?1")
+	public List<Producto> buscarProdXMecanismo(String mecanismo);
 }
 	

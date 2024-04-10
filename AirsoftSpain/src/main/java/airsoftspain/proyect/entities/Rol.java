@@ -24,7 +24,7 @@ public class Rol {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_rol")
-	public int idRol;
+	public int id;
 	public String nombre;
 	public String descripcion;
 	
@@ -32,19 +32,19 @@ public class Rol {
 		super();
 	}
 
-	public Rol(int idRol, String nombre, String descripcion) {
+	public Rol(int id, String nombre, String descripcion) {
 		super();
-		this.idRol = idRol;
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 
-	public int getIdRol() {
-		return idRol;
+	public int getid() {
+		return id;
 	}
 
-	public void setIdRol(int idRol) {
-		this.idRol = idRol;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -65,14 +65,14 @@ public class Rol {
 
 	@Override
 	public String toString() {
-		return "Rol [idRol=" + idRol + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
-	}
+		return "Rol [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
+	} 
 
 	//SOLO CON LA PK
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(idRol);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public class Rol {
 		if (getClass() != obj.getClass())
 			return false;
 		Rol other = (Rol) obj;
-		return idRol == other.idRol;
+		return id == other.id;
 	}
 	
 	

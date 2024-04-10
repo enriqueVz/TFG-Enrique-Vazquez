@@ -12,7 +12,10 @@ public interface ProductoDao {
 	public List<Producto> findbByTiposProd(int tipoProd);
 	public List<Producto> findByNombre(String nombre);
 	public List<Producto> findProductosByEtiquetas (int etiquetas);
-	public List<Producto> findProductosByStock (int stock);
+	public List<Producto> findProductosByStock(int stock);
+	public List<Producto> findProductosByMaterial(String material);
+	public List<Producto> findProductosByFabricante(String fabricante);
+	public List<Producto> findProductosByMecanismo(String mecanismo);
 	
 	//CRUD
 	public List<Producto> findProductos();

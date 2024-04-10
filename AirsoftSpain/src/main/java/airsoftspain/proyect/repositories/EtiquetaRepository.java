@@ -14,4 +14,5 @@ public interface EtiquetaRepository extends JpaRepository <Etiqueta, Integer> {
 	
 	@Query("SELECT e FROM Etiqueta e WHERE e.nombre=?1")
 	public Etiqueta findEtiquetabyNombre(String nombre);
+
 }

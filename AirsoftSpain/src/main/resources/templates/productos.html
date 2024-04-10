@@ -18,6 +18,9 @@
 						<th>Precio</th>
 						<th>Stock</th>
 						<th>Tipo de producto</th>
+						<th>Material</th>
+						<th>Fabricante</th>
+						<th>Mecanismo</th>
 						
 						
 						<tr th:each="producto : ${productos}">
@@ -28,6 +31,9 @@
 						<td th:text="${producto.precio}"></td>
 						<td th:text="${producto.stock}"></td>
 						<td th:text="${producto.tipoProd}"></td>
+						<td th:text="${producto.material}"></td>
+						<td th:text="${producto.fabricante}"></td>
+						<td th:text="${producto.mecanismo}"></td>
 						
 						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
 						<td>

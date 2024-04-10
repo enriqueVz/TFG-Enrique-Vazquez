@@ -63,7 +63,10 @@ public class ProductoController {
 		prodExistente.setEtiquetas(producto.getEtiquetas());
 		prodExistente.setPrecio(producto.getPrecio());
 		prodExistente.setStock(producto.getStock());
-		prodExistente.settipoProd(producto.gettipoProd());
+		prodExistente.setTipoProd(producto.getTipoProd());
+		prodExistente.setMaterial(producto.getMaterial());
+		prodExistente.setFabricante(producto.getFabricante());
+		prodExistente.setMecanismo(producto.getMecanismo());
 	
 		pdao.modificarProducto(prodExistente);
 		return "redirect:/productos";

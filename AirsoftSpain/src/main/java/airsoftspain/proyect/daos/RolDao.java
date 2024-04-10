@@ -7,7 +7,7 @@ import airsoftspain.proyect.entities.Rol;
 
 public interface RolDao {
 
-	public Rol verElRol(int idRol);
+	public Rol verElRol(int id);
 	public Rol VerRolPorNombre(String nombre);
 	
 	//CRUD	 
