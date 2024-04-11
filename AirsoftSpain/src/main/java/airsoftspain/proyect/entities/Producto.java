@@ -1,6 +1,5 @@
 package airsoftspain.proyect.entities;
 
-
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -9,42 +8,45 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
+//Identificamos la clase como una entidad en la BBDD
+
 @Entity
-@Table(name="productos")
+//Anotación para indicar que el nombre de la tabla no coincide con la columna de la tabla en BBDD
+
+@Table(name = "productos")
 public class Producto {
-//MIRAR LOS @ DE ARRIBA Q NO FURULAN
-	//LAS VARIABLES NO PUEDEN DECLARARSE CON "_-"
+	// Indicamos que es la Primary Key
 	@Id
+	// Anotación para indicar que el nombre de la variable no coincide con el campo
+	// de la tabla en BBDD
+	@Column(name = "id_producto")
+	// Indicamos que el campo es Autoincrement
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_producto")
 	public int id;
-	@Column(name="nombre_producto")
+	// Anotación para indicar que el nombre de la variable no coincide con el campo
+
+	@Column(name = "nombre_producto")
 	public String nombre;
 	public String descripcion;
 	public int etiquetas;
 	public double precio;
 	public int stock;
-	@Column(name="tipo_producto_id")
+	// Anotación para indicar que el nombre de la variable no coincide con el campo
+
+	@Column(name = "tipo_producto_id")
 	public int tipoProd;
 	public String material;
 	public String fabricante;
 	public String mecanismo;
-	
-	
+
+	// Constructor vacío
+
 	public Producto() {
 		super();
 	}
+
+	// Constructor con parámetros
 
 	public Producto(int id, String nombre, String descripcion, int etiquetas, double precio, int stock, int tipoProd,
 			String material, String fabricante, String mecanismo) {
@@ -60,7 +62,8 @@ public class Producto {
 		this.fabricante = fabricante;
 		this.mecanismo = mecanismo;
 	}
-	
+
+	// Getters and setters
 
 	public int getId() {
 		return id;
@@ -142,14 +145,11 @@ public class Producto {
 		this.mecanismo = mecanismo;
 	}
 
-	
-	
-	//CON LA PK SOLO
+	// Equals and hashcode con la PK
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -162,8 +162,5 @@ public class Producto {
 		Producto other = (Producto) obj;
 		return id == other.id;
 	}
-	
+
 }
-
-
-

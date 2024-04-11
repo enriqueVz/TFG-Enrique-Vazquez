@@ -6,24 +6,34 @@ import airsoftspain.proyect.entities.Usuario;
 
 public interface UsuarioDao {
 
-	
-	Usuario buscarPorDNI(String dni);
-	List<Usuario> buscarPorCP(int CPostal);
-	Usuario buscarPorAdress(String direccion);
-	Usuario buscarPorEmail(String email);
-	Usuario buscarPorTlf(int telefono);
-	List<Usuario> buscarPorRol(int idRol);
+	// Buscar usuario por "id"
 	Usuario buscarXId(int id);
-	boolean registro(Usuario user);
-	
-	
-	//CRUD
+
+	// Buscar usuario por "dni"
+	Usuario buscarPorDNI(String dni);
+
+	// Buscar usuario por "Código postal"
+	List<Usuario> buscarPorCP(int CPostal);
+
+	// Buscar usuario por "dirección"
+	Usuario buscarPorAdress(String direccion);
+
+	// Buscar usuario por "email"
+	Usuario buscarPorEmail(String email);
+
+	// Buscar usuario por "teléfono"
+	Usuario buscarPorTlf(int telefono);
+
+	// Buscar usuario por "ID del rol"
+	List<Usuario> buscarPorRol(int idRol);
+
+	// Métodos del CRUD
 	public List<Usuario> verLosUsuarios();
-	 
+
 	public Usuario guardarUser(Usuario usuario);
-	
+
 	public Usuario modificarUser(Usuario usuario);
-	
-	public void eliminarUser (int id);
-	
+
+	public void eliminarUser(int id);
+
 }

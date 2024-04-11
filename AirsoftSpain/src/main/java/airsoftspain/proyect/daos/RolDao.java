@@ -7,10 +7,13 @@ import airsoftspain.proyect.entities.Rol;
 
 public interface RolDao {
 
+	//Buscar roles por "id"
 	public Rol verElRol(int id);
+	
+	//Buscar roles por "nombre"
 	public Rol VerRolPorNombre(String nombre);
 	
-	//CRUD	 
+	//Métodos del CRUD	 
 	public List<Rol>filtrarRoles();
 
 	public Rol guardarRol(Rol rol);

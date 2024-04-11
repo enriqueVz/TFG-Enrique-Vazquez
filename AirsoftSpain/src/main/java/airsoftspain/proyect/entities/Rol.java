@@ -7,31 +7,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
+//Identificamos la clase como una entidad en la BBDD
 @Entity
 public class Rol {
-	
+	// Indicamos que es la Primary Key
 	@Id
+	// Anotación para indicar que el nombre de la variable no coincide con el campo
+	// de la tabla en BBDD
+	@Column(name = "id_rol")
+	// Indicamos que el campo es Autoincrement
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_rol")
 	public int id;
 	public String nombre;
 	public String descripcion;
-	
+
+	// Constructor vacío
 	public Rol() {
 		super();
 	}
 
+	// Constructor con parámetros
 	public Rol(int id, String nombre, String descripcion) {
 		super();
 		this.id = id;
@@ -39,6 +35,7 @@ public class Rol {
 		this.descripcion = descripcion;
 	}
 
+	// Getters and setters
 	public int getid() {
 		return id;
 	}
@@ -63,13 +60,8 @@ public class Rol {
 		this.descripcion = descripcion;
 	}
 
-	@Override
-	public String toString() {
-		return "Rol [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
-	} 
+	// Equals and hashcode con la PK
 
-	//SOLO CON LA PK
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -86,8 +78,5 @@ public class Rol {
 		Rol other = (Rol) obj;
 		return id == other.id;
 	}
-	
-	
 
-	
 }
