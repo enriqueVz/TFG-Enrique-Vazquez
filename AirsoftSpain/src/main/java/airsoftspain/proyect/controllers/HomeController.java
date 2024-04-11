@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-//MIRAR PARA HACER RUTA PREDETERMINADA	
+
 	
-	
+	//Configuración del home con tres variables
 	@GetMapping({"/,/home,/index"})
 	public String verHome() {
 		return "index";
