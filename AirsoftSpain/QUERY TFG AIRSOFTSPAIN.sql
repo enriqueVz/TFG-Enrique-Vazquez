@@ -8,7 +8,7 @@ CREATE TABLE usuarios (
     apellidos VARCHAR(100),
     CPostal INTEGER,
     direccion VARCHAR(150),
-    id_rol INTEGER,
+    id_rol INTEGER(3),
     email VARCHAR(100),
     telefono VARCHAR(20),
     contraseña VARCHAR(50)
@@ -42,7 +42,7 @@ CREATE TABLE productos (
     id_producto INTEGER PRIMARY KEY AUTO_INCREMENT,
     nombre_producto VARCHAR(150),
     descripcion VARCHAR(300),
-    etiquetas INTEGER(3),
+    etiquetas INTEGER,
     precio DECIMAL(10,2),
     stock INTEGER,
     tipo_producto_id INTEGER,
@@ -62,7 +62,10 @@ CREATE TABLE productos_etiquetas (
 
 CREATE TABLE pedidos (
     id_pedido INTEGER PRIMARY KEY AUTO_INCREMENT,
-    precio_total DECIMAL(10,2)
+    id_user INTEGER,
+    precio_total DECIMAL(10,2),
+    fecha DATE,
+    FOREIGN KEY (id_user) REFERENCES usuarios (id_user)
 );
 
 INSERT INTO etiquetas (nombre) VALUES 
@@ -104,16 +107,27 @@ INSERT INTO tipo_producto (nombre_tipo, descripcion) VALUES
 ('Accesorio', 'Accesorios de airsoft');
 
 
-	INSERT INTO productos (nombre_producto, descripcion, etiquetas, precio, stock, tipo_producto_id, material, fabricante, mecanismo) VALUES
-	('Rifle de francotirador', 'Potente rifle de francotirador para largas distancias.', 1, 250.00, 20, 1, 'A','A','A'),
-	('Pistola de gas', 'Pistola semiautomática de gas con cargador de 25 balines.', 2, 100.00, 30, 2, 'A','A','A'),
-	('Escopeta táctica', 'Escopeta de aire comprimido ideal para combates cercanos.', 3, 150.00, 15, 3,'A','A','A'),
-	('Granada de humo', 'Granada de humo con temporizador para camuflaje táctico.', 4, 20.00, 50, 4, 'A','A','A'),
-	('Máscara protectora', 'Máscara de protección facial con diseño de calavera.', 5, 30.00, 40, 4,'A','A','A'),
-	('Chaleco táctico', 'Chaleco con múltiples bolsillos para cargar equipamiento.', 6, 80.00, 25, 4,'A','A','A'),
-	('Gafas de protección', 'Gafas resistentes a impactos para proteger los ojos.', 7, 15.00, 60, 4,'A','A','A'),
-	('Munición BB', 'Bolsa de 5000 balines BB de alta calidad.', 8, 10.00, 100, 4,'A','A','A'),
-	('Linterna táctica', 'Linterna LED recargable para operaciones nocturnas.', 9, 40.00, 35, 4,'A','A','A'),
-	('Silenciador de rifle', 'Silenciador de rosca universal para reducir el sonido.', 10, 50.00, 20, 4,'A','A','A');
-    
-    
+INSERT INTO productos (nombre_producto, descripcion, etiquetas, precio, stock, tipo_producto_id, material, fabricante, mecanismo) VALUES
+('Rifle de francotirador', 'Potente rifle de francotirador para largas distancias.', 1, 250.00, 20, 1, 'A','A','A'),
+('Pistola de gas', 'Pistola semiautomática de gas con cargador de 25 balines.', 2, 100.00, 30, 2, 'A','A','A'),
+('Escopeta táctica', 'Escopeta de aire comprimido ideal para combates cercanos.', 3, 150.00, 15, 3,'A','A','A'),
+('Granada de humo', 'Granada de humo con temporizador para camuflaje táctico.', 4, 20.00, 50, 4, 'A','A','A'),
+('Máscara protectora', 'Máscara de protección facial con diseño de calavera.', 5, 30.00, 40, 4,'A','A','A'),
+('Chaleco táctico', 'Chaleco con múltiples bolsillos para cargar equipamiento.', 6, 80.00, 25, 4,'A','A','A'),
+('Gafas de protección', 'Gafas resistentes a impactos para proteger los ojos.', 7, 15.00, 60, 4,'A','A','A'),
+('Munición BB', 'Bolsa de 5000 balines BB de alta calidad.', 8, 10.00, 100, 4,'A','A','A'),
+('Linterna táctica', 'Linterna LED recargable para operaciones nocturnas.', 9, 40.00, 35, 4,'A','A','A');
+
+-- Insertar 10 pedidos aleatorios
+INSERT INTO pedidos (id_user, precio_total, fecha)
+VALUES
+(3, 120.50, '2024-04-10'),
+(5, 350.75, '2024-04-11'),
+(8, 92.00, '2024-04-12'),
+(2, 220.00, '2024-04-13'),
+(6, 150.25, '2024-04-14'),
+(4, 75.60, '2024-04-15'),
+(1, 500.00, '2024-04-16'),
+(7, 310.80, '2024-04-17'),
+(9, 180.30, '2024-04-18'),
+(10, 420.90, '2024-04-19');

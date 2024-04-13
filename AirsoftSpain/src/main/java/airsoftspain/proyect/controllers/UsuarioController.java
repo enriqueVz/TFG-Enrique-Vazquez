@@ -1,5 +1,6 @@
 package airsoftspain.proyect.controllers;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,16 +29,30 @@ public class UsuarioController {
 		return "usuarios";
 
 	}
-	/*
-	 * //FALLA ALGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-	 * 
-	 * @GetMapping("/usuarios/user/{id}") public String
-	 * verUnUser(@PathVariable("id") int id, Model model){
-	 * model.addAttribute("usuario", udao.buscarXId(id)); return "user";
-	 * 
-	 * }//No funciona)
-	 */
 
+	  //FALLA ALGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+	/*  
+	  @GetMapping("/usuarios/user/{id}")
+	  public String verUnUser(@PathVariable("id") int id, @ModelAttribute("usuarios") Usuario usuario, Model model){
+	  model.addAttribute("usuarios", udao.buscarXId(id));
+	  return "userporcampos";
+	  
+	  }//No funciona)
+	
+	@GetMapping("/usuarios/user/{id}")
+	public String verUnUser(@RequestParam(value = "search", required = false) int, Model model) {
+	    if (searchQuery != null && !searchQuery.isEmpty()) {
+	        // Perform the search using the searchQuery
+	        List<Usuario> usuarios = udao.buscarXId(id) // Assuming you have a method to search by name or surname
+	        model.addAttribute("usuarios", usuarios);
+	    } else {
+	        // If no search query provided, show all users (or default behavior)
+	        List<Usuario> allUsuarios = udao.verLosUsuarios();
+	        model.addAttribute("usuarios", allUsuarios);
+	    }
+	    return "userporcampos";
+	}
+  */
 	@GetMapping("/usuarios/alta")
 	// Método para dar de alta un usuario en esta URL
 	public String altaUsuarioForm(Model model) {
