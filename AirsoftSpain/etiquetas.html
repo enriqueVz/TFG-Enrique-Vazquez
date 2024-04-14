@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Etiquetas</title>
+</head>
+<body>
+	
+		<div>
+			<fieldset>
+				<legend>Etiquetas</legend>
+					
+						<table>
+						<th>id:</th>
+						<th>Nombre:</th>
+					
+						
+						
+						
+						<tr th:each="etiqueta : ${etiquetas}">
+						<td th:text="${etiqueta.id}"></td>
+						<td th:text="${etiqueta.nombre}"></td>
+						
+						
+						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
+						<td>
+							<a th:href="@{/etiquetas/modificar/{id}(id=${etiqueta.id})}" class="btn btn-info">
+							<button>Editar etiqueta:</button>
+							</a>
+						</td>
+						
+						<td>
+							<a th:href="@{/etiquetas/eliminar/{id}(id=${etiqueta.id})}" class="btn btn-info">
+							<button>Eliminar etiqueta:</button>
+							</a>
+						</td>
+						</tr>
+						</table>
+			</fieldset>
+		</div>
+		<br>
+		
+		
+		<!-- BOTONES DE ALTA Y REDIRECCIÓN -->
+						
+		<a th:href="@{/etiquetas/alta}">
+		<button>Crea una etiqueta:</button>
+		</a>
+			
+		<a th:href="@{/}">
+		<button>volver al inicio:</button>
+		</a>
+</body>
+</html>

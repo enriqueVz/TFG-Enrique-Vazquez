@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuarios</title>
+</head>
+<body>
+	
+		<div>
+			<fieldset>
+				<legend>Usuarios</legend>
+					
+						<table>
+						<th>id</th>
+						<th>DNI</th>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Código postal</th>
+						<th>Dirección</th>
+						<th>ID ROL</th>
+						<th>Email</th>
+						<th>Teléfono</th>
+						
+						
+						<tr th:each="usuario : ${usuarios}">
+						<td th:text="${usuario.id}"></td>
+						<td th:text="${usuario.dni}"></td>
+						<td th:text="${usuario.nombre}"></td>
+						<td th:text="${usuario.apellidos}"></td>
+						<td th:text="${usuario.CPostal}"></td>
+						<td th:text="${usuario.direccion}"></td>
+						<td th:text="${usuario.idRol}"></td>
+						<td th:text="${usuario.email}"></td>
+						<td th:text="${usuario.telefono}"></td>
+						
+						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
+						<td>
+							<a th:href="@{/usuarios/modificar/{id}(id=${usuario.id})}" class="btn btn-info">
+							<button>Editar usuario:</button>
+							</a>
+						</td>
+						
+						<td>
+							<a th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}" class="btn btn-info">
+							<button>Eliminar usuario:</button>
+							</a>
+						</td>
+						</tr>
+						</table>
+			</fieldset>
+		</div>
+		<br>
+		
+		
+		<!-- BOTONES DE ALTA Y REDIRECCIÓN -->
+						
+		<a th:href="@{/usuarios/alta}">
+		<button>Crea un usuario:</button>
+		</a>
+			
+		<a th:href="@{/}">
+		<button>volver al inicio:</button>
+		</a>
+</body>
+</html>

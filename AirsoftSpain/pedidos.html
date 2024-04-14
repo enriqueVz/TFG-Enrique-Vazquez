@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pedidos</title>
+</head>
+<body>
+	
+		<div>
+			<fieldset>
+				<legend>Pedidos</legend>
+					
+						<table>
+						<th>id del pedido:</th>
+						<th>Nombre del usuario:</th>
+						<th>Importe total:</th>
+						<th>fecha del pedido:</th>
+						
+						
+						<tr th:each="pedido : ${pedidos}">
+						<td th:text="${pedido.idPed}"></td>
+						<td th:text="${pedido.idUser}"></td>
+						<td th:text="${pedido.total}"></td>
+						<td th:text="${pedido.fechaped}"></td>
+						
+						<!-- BOTONES EDITAR Y ELIMINAR POR CADA USER -->
+						<td>
+							<a th:href="@{/pedidos/modificar/{id}(id=${pedido.idPed})}" class="btn btn-info">
+							<button>Editar pedido:</button>
+							</a>
+						</td>
+						
+						<td>
+							<a th:href="@{/pedidos/eliminar/{id}(id=${pedido.idPed})}" class="btn btn-info">
+							<button>Eliminar pedido:</button>
+							</a>
+						</td>
+						</tr>
+						</table>
+			</fieldset>
+		</div>
+		<br>
+		
+		
+		<!-- BOTONES DE ALTA Y REDIRECCIÓN -->
+						
+		<a th:href="@{/pedidos/alta}">
+		<button>Crea una pedido:</button>
+		</a>
+			
+		<a th:href="@{/}">
+		<button>volver al inicio:</button>
+		</a>
+</body>
+</html>

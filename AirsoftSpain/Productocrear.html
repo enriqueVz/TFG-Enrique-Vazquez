@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear un producto</title>
+</head>
+<body>
+<fieldset>
+<legend>Crea un producto:</legend>
+	
+		<div>
+		 <form th:action="@{/productos}" th:object="${producto}" method="POST">
+		 
+		
+		  <label>Nombre:</label>
+		 <input type="text" th:field="*{nombre}">
+		 <br>
+		 
+		  <label>Descripción:</label>
+		 <input type="text" th:field="*{descripcion}">
+		 <br>
+		 
+		  <label>Etiquetas:</label>
+		 <input type="number" th:field="*{etiquetas}">
+		 <br>
+		 
+		  <label>Precio:</label>
+		 <input type="text" th:field="*{precio}">
+		 <br>
+		 
+		  <label>stock:</label>
+		 <input type="number" th:field="*{stock}">
+		 <br>
+		 
+		  <label>Tipo de producto:</label>
+		 <input type="number" th:field="*{tipoProd}">
+		 <br>
+		 
+		  <label>Material:</label>
+		 <input type="text" th:field="*{material}">
+		 <br>
+		 
+		  <label>Fabricante:</label>
+		 <input type="text" th:field="*{fabricante}">
+		 <br>
+		 
+		  <label>Mecanismo:</label>
+		 <input type="text" th:field="*{mecanismo}">
+		 <br>
+		
+		 <button class="btn btn-sucess">guardar</button>
+		 </form>
+		</div>
+		</fieldset>
+		<a th:href="@{/productos}">
+		<button>Volver a productos</button>
+		</a>
+</body>
+</html>

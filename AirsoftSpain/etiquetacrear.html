@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear una etiqueta</title>
+</head>
+<body>
+	
+		<div>
+		 <form th:action="@{/etiquetas}" th:object="${etiqueta}" method="POST">
+		 
+		  <label>Nombre:</label>
+		 <input type="text" th:field="*{nombre}">
+		 <br>
+		 
+		 <button class="btn btn-sucess">guardar</button>
+		 </form>
+			
+		</div>
+		
+		<a th:href="@{/etiquetas}">
+		<button>Volver a etiquetas</button>
+		</a>
+</body>
+</html>

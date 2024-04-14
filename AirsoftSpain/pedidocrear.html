@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear un pedido</title>
+</head>
+<body>
+	
+		<div>
+		 <form th:action="@{/pedidos}" th:object="${pedido}" method="POST">
+		 
+
+		   <label>Id del usuario:</label>
+		 <input type="text" th:field="*{idUser}">
+		 <br>
+		 
+		 	<label>Total del pedido:</label>
+		 <input type="text" th:field="*{total}">
+		 <br>
+		 
+		    <label>fecha:</label>
+		 <input type="text" th:field="*{fechaped}">
+		 <br>
+		 <button class="btn btn-sucess">guardar</button>
+		 </form>
+			
+		</div>
+		
+		<a th:href="@{/pedidos}">
+		<button>Volver a pedidos </button>
+		</a>
+</body>
+</html>
