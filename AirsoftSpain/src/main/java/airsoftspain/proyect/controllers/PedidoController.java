@@ -60,7 +60,7 @@ public class PedidoController {
 
 		}
 
-		@GetMapping("/pedidos/modificar/{id}")
+		@GetMapping("/pedidos/modificar/{idPed}")
 		// Método para modificar un pedido mediante en la web
 		public String mostrarPedidoEdit(@PathVariable int idPed, Model model) {
 			// Asignamos la id del pedido a "pedido" para invocarlo en el HTML
@@ -69,7 +69,7 @@ public class PedidoController {
 		}
 
 		// PostMapping para el tratamiento de datos
-		@PostMapping("/pedidos/{id}")
+		@PostMapping("/pedidos/{idPed}")
 		// Método para sobreescribir el pedido existente
 		public String modificarPedido(@PathVariable int idPed, int idUser, @ModelAttribute("pedido") Pedido pedido, Model model) {
 			// La variable "pedExistente" recogerá los datos asignados a la id
@@ -88,7 +88,7 @@ public class PedidoController {
 
 		}
 
-		@GetMapping("/pedidos/eliminar/{id}")
+		@GetMapping("/pedidos/eliminar/{idPed}")
 		// Método para eliminar pedidos segun la id seleccionada
 		public String eliminarPedido(@PathVariable int idPed) {
 			// Llamamos a la variable que elimina el pedido

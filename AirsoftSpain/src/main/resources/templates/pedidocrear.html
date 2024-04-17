@@ -10,6 +10,9 @@
 		 <form th:action="@{/pedidos}" th:object="${pedido}" method="POST">
 		 
 
+  <label>fecha:</label>
+		 <input type="text" th:field="*{fechaped}">
+		 <br>
 		   <label>Id del usuario:</label>
 		 <input type="text" th:field="*{idUser}">
 		 <br>
@@ -18,9 +21,7 @@
 		 <input type="text" th:field="*{total}">
 		 <br>
 		 
-		    <label>fecha:</label>
-		 <input type="text" th:field="*{fechaped}">
-		 <br>
+		  
 		 <button class="btn btn-sucess">guardar</button>
 		 </form>
 			
